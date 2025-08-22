@@ -1,0 +1,11 @@
+.movies-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.movies-page-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}

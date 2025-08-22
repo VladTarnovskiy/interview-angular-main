@@ -1,0 +1,30 @@
+.add-movie-form {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.form-check {
+  margin-bottom: 10px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}

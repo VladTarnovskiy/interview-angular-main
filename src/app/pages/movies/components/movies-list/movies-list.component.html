@@ -1,0 +1,40 @@
+<div class="movies-list-container">
+  <input
+    type="text"
+    [formControl]="searchControl"
+    placeholder="Введите название фильма"
+    class="form-control"
+  />
+  <div class="actions">
+    <button (click)="openAddMovieModal()">Добавить фильм</button>
+    <button (click)="markAllMoviesAsOnline()">Сделать все онлайн</button>
+  </div>
+
+  <div class="movies-list" *ngIf="movies.length > 0">
+    <app-movie
+      *ngFor="let movie of movies"
+      [movie]="movie"
+      (toggleMovieStatus)="updateMovieStatus(movie)"
+      (deleteMovie)="deleteMovie(movie.id)"
+    ></app-movie>
+  </div>
+
+  <div class="movies-list" *ngIf="movies.length === 0">
+    <p>Фильмы не найдены</p>
+    <p>
+      Для добавления фильма нажмите на кнопку "Добавить фильм" или измените
+      параметры поиска
+    </p>
+  </div>
+
+  <app-modal
+    [isOpen]="isAddMovieModalOpen"
+    title="Добавить новый фильм"
+    (close)="closeAddMovieModal()"
+  >
+    <app-add-movie-form
+      (submitForm)="onAddMovie($event)"
+      (cancel)="closeAddMovieModal()"
+    ></app-add-movie-form>
+  </app-modal>
+</div>

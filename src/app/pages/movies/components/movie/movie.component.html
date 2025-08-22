@@ -1,0 +1,21 @@
+<app-card-template>
+  <div class="header" header>
+    <h3>{{ movie.name }}</h3>
+  </div>
+
+  <div class="body" *ngIf="movie.description" body>
+    <p>{{ movie.description }}</p>
+  </div>
+
+  <div actions class="actions">
+    <label class="checkbox-label">
+      <input
+        type="checkbox"
+        [checked]="movie.isOnline"
+        (change)="onToggleMovieStatus()"
+      />
+      <span>В онлайне</span>
+    </label>
+    <button class="delete-btn" (click)="onDelete()">Удалить</button>
+  </div>
+</app-card-template>
